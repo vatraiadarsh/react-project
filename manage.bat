@@ -1,4 +1,3 @@
 git add .
-git commit -m "working with event handler "
+git commit -m "passing method references between components "
 git push -u origin master
-git log -- oneline
