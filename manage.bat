@@ -1,3 +1,3 @@
 git add .
-git commit -m "passing method references between components "
+git commit -m "Adding two way data binding "
 git push -u origin master
