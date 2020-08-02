@@ -1,3 +1,3 @@
 git add .
-git commit -m "rendering content conditionally The JS way "
+git commit -m "Outputing lists and state"
 git push -u origin master
