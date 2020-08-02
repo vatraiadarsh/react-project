@@ -5,9 +5,9 @@ import "./App.css";
 class App extends React.Component {
   state = {
     persons: [
-      { name: "Sujan", age: "21" },
-      { name: "suraj", age: "28" },
-      { name: "John", age: "56" },
+      {id:"kfijojfj",  name: "Sujan", age: "21" },
+      {id:"kf76vjfj",  name: "suraj", age: "28" },
+      {id:"kfju56fj",  name: "John", age: "56" },
     ],
     otherState: "SOme other value",
     showPersons: false,
@@ -23,11 +23,17 @@ class App extends React.Component {
     });
   };
 
+  
+
   deletePersonHandler = (personIndex) => {
-    const persons = this.state.persons;
+      // const persons = this.state.persons.slice();
+    const persons = [...this.state.persons];
+    // spread operator we have the new array from the objects of the old array
     persons.splice(personIndex,1);
-    this.setState(persons);
+    this.setState({persons});
   };
+
+  
 
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;
@@ -43,7 +49,7 @@ class App extends React.Component {
         <div>
           {this.state.persons.map((person,index) => {
             return (
-              <Person
+              <Person key={person.id}
                 name={person.name}
                 age={person.age}
                 click={()=>this.deletePersonHandler(index)}

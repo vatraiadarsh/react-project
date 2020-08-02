@@ -1,3 +1,3 @@
 git add .
-git commit -m "Outputing lists and state"
+git commit -m "updating state immutably"
 git push -u origin master
