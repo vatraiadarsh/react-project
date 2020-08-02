@@ -1,3 +1,3 @@
 git add .
-git commit -m "updating state immutably"
+git commit -m "Flexible List"
 git push -u origin master
