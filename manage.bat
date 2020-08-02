@@ -1,3 +1,3 @@
 git add .
-git commit -m "Flexible List"
+git commit -m "Dynamic style sheets and classnames"
 git push -u origin master

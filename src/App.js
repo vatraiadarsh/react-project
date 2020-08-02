@@ -27,7 +27,7 @@ class App extends React.Component {
     const persons = [...this.state.persons];
     persons[personIndex] = person;
 
-    this.setState({persons});
+    this.setState({ persons });
   };
 
   deletePersonHandler = (personIndex) => {
@@ -46,6 +46,15 @@ class App extends React.Component {
   };
 
   render() {
+    const style = {
+      backgroundColor: "green",
+      color: "white",
+      font: "inherit",
+      border: "1 px solid blue",
+      padding: "8px",
+      cursor: "pointer",
+    };
+
     let persons = null;
     if (this.state.showPersons) {
       persons = (
@@ -63,12 +72,27 @@ class App extends React.Component {
           })}
         </div>
       );
+      style.backgroundColor = "red";
+    }
+
+    const classes = [];
+
+    if (this.state.persons.length <= 2) {
+      classes.push("red"); // classes = ['red']
+    }
+    if (this.state.persons.length <= 1) {
+      classes.push("bold"); // classes = ['red','bold]
     }
 
     return (
       <div className="App">
-        <p></p>
-        <button onClick={this.togglePersonsHandler}>Toggle Person</button>
+        <p className={classes.join(' ')}>
+          Props allow you to pass data from a parent (wrapping) component to a
+          child (embedded) component.
+        </p>
+        <button style={style} onClick={this.togglePersonsHandler}>
+          Toggle Person
+        </button>
         {persons}
       </div>
     );
